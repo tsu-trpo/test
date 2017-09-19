@@ -7,10 +7,19 @@ TEST(Sort, sort)
 {
     using vector = std::vector<int>;
 
-    vector vec{10, 20};
-    sort(vec);
-    vector expected{10, 20};
-    ASSERT_EQ(expected, vec);
+    {
+        vector vec{10, 20};
+        sort(vec);
+        vector expected{10, 20};
+        ASSERT_EQ(expected, vec);
+    }
+
+    {
+        vector vec{20, 10};
+        sort(vec);
+        vector expected{10, 20};
+        ASSERT_EQ(expected, vec);
+    }
 }
 
 TEST(BinSearch, bin_search)
@@ -21,3 +30,4 @@ TEST(BinSearch, bin_search)
     int *res = bin_search(vec, 15);
     ASSERT_FALSE(res);
 }
+
