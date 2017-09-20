@@ -1,0 +1,15 @@
+version: 0.1.{build}
+
+platform:
+  - x64
+
+build_script:
+  - cmd: git submodule update --recursive --init
+  - cmd: mkdir build
+  - cmd: cd build
+  - cmd: cmake .. -G "Visual Studio 14 2015 Win64"
+  - cmd: cmake --build . --config Release
+
+test_script:
+  - cmd: cd build
+  - cmd: ctest
