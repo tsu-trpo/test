@@ -1,0 +1,14 @@
+language: cpp
+dist: trusty
+compiler:
+- gcc
+os:
+- linux
+
+script:
+  - git submodule update --recursive --init
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build . --config Release
+  - ctest --output-on-failure
