@@ -17,4 +17,10 @@ add_test(
     COMMAND ${PROJECT_NAME} 
     "--gtest_output=xml:${CMAKE_BINARY_DIR}/reports/"
 )
+add_custom_target(${PROJECT_NAME}_autorun
+    ALL
+    ctest --output-on-failure
+    DEPENDS ${PROJECT_NAME}
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+)
 
