@@ -9,5 +9,5 @@ int main()
     int *p1 = bin_search(vec, 16);
     std::cout << "should be true: " << (p1 == nullptr) << std::endl;
     int *p2 = bin_search(vec, 17);
-    std::cout << "should be true: " << (p2 == &vec[4]) << std::endl;
+    std::cout << "should be true: " << (p2 == &vec[3]) << std::endl;
 }
